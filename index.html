@@ -799,8 +799,9 @@ section { position: relative; }
   font-size: 12px;
   color: rgba(255,255,255,0.45);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
+  line-height: 1.55;
 }
 .service-bullets li::before {
   content: '';
@@ -808,6 +809,7 @@ section { position: relative; }
   width: 5px; height: 5px;
   border-radius: 50%;
   flex-shrink: 0;
+  margin-top: 5px;
 }
 .teal-bullets li::before { background: var(--teal); }
 .gold-bullets li::before { background: var(--gold); }
@@ -1394,7 +1396,7 @@ footer {
         <span class="line-gold">Move forward.</span>
       </h1>
       <p class="hero-sub">
-        We are not your help desk. We are the partner that lifts your business into the cloud, locks it down, and accelerates it with AI — so you can focus on what you actually built your company to do.
+        Microsoft cloud modernization for SMBs ready to move, secure, and scale. N7Fidelicore helps businesses migrate to Azure and Microsoft 365, harden security with Defender and Sentinel, and prepare for secure AI adoption — without enterprise consulting overhead.
       </p>
       <div class="hero-btns">
         <a href="#contact"><button class="btn-primary">Book a Discovery Call</button></a>
@@ -1432,11 +1434,11 @@ footer {
       <div class="trust-divider"></div>
       <div class="trust-item"><div class="trust-dot"></div>Microsoft 365 Migrations</div>
       <div class="trust-divider"></div>
-      <div class="trust-item"><div class="trust-dot"></div>SMB & Startup Focused</div>
+      <div class="trust-item"><div class="trust-dot"></div>Defender &amp; Sentinel Hardening</div>
       <div class="trust-divider"></div>
-      <div class="trust-item"><div class="trust-dot"></div>AI Integration Ready</div>
+      <div class="trust-item"><div class="trust-dot"></div>Secure AI Adoption</div>
       <div class="trust-divider"></div>
-      <div class="trust-item"><div class="trust-dot"></div>Cybersecurity Hardened</div>
+      <div class="trust-item"><div class="trust-dot"></div>SMB &amp; Startup Focused</div>
     </div>
   </div>
 </div>
@@ -1522,13 +1524,13 @@ footer {
         </div>
         <h3 class="service-title">Azure Cloud Migrations</h3>
         <p class="service-body">
-          Move your infrastructure, workloads, and data to Microsoft Azure — with zero downtime ambition and full architecture accountability. We plan, migrate, and optimize.
+          Structured, accountable Azure migrations — from readiness through cutover to post-migration optimization. We tie every phase to reduced downtime, cost control, compliance, and a secure landing zone.
         </p>
         <ul class="service-bullets teal-bullets">
-          <li>Infrastructure assessment & cloud readiness</li>
-          <li>Lift-and-shift and modernization paths</li>
-          <li>Azure landing zone design</li>
-          <li>Post-migration optimization & cost control</li>
+          <li><strong style="color:rgba(255,255,255,0.75)">Azure Readiness Assessment</strong> — workload inventory, identity, network, security, licensing &amp; cost assumptions</li>
+          <li><strong style="color:rgba(255,255,255,0.75)">Azure Landing Zone Buildout</strong> — Entra ID, subscriptions, RBAC, policy, monitoring &amp; Defender for Cloud baseline</li>
+          <li><strong style="color:rgba(255,255,255,0.75)">Azure Migration Sprint</strong> — pilot migration, cutover plan, workload move, validation &amp; rollback path</li>
+          <li><strong style="color:rgba(255,255,255,0.75)">Cost &amp; Security Optimization</strong> — right-sizing, reserved instances, Azure Advisor, backup/DR validation</li>
         </ul>
         <div class="service-bg-num">01</div>
       </div>
@@ -1539,15 +1541,14 @@ footer {
         <div class="service-icon-wrap teal-icon">
           <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
         </div>
-        <h3 class="service-title">SharePoint & Mail Migrations</h3>
+        <h3 class="service-title">SharePoint &amp; Mail Migrations</h3>
         <p class="service-body">
-          Migrate your team to Microsoft 365, SharePoint, and Exchange Online with full data integrity, user continuity, and a clean post-migration environment.
+          The most in-demand migration work we do — and our most detailed practice. SharePoint migration isn't copying files: it's governed modernization. We handle permissions, architecture, ownership, metadata, and user continuity from day one.
         </p>
         <ul class="service-bullets teal-bullets">
-          <li>Mailbox & calendar migrations (Exchange, Gmail)</li>
-          <li>SharePoint Online buildout & intranet design</li>
-          <li>OneDrive & Teams configuration</li>
-          <li>User training & adoption support</li>
+          <li><strong style="color:rgba(255,255,255,0.75)">Microsoft 365 Migration Blueprint</strong> — source assessment, mailbox/data volume, DNS, identity, licensing &amp; cutover plan</li>
+          <li><strong style="color:rgba(255,255,255,0.75)">Exchange &amp; Mail Migration</strong> — Exchange on-prem, Google Workspace, IMAP, tenant-to-tenant, calendar/contacts &amp; DNS</li>
+          <li><strong style="color:rgba(255,255,255,0.75)">SharePoint &amp; File Server Modernization</strong> — content inventory, permissions cleanup, library design, metadata, Teams/OneDrive alignment &amp; user training</li>
         </ul>
         <div class="service-bg-num">02</div>
       </div>
@@ -1558,15 +1559,15 @@ footer {
         <div class="service-icon-wrap gold-icon">
           <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
-        <h3 class="service-title">Cybersecurity Foundations</h3>
+        <h3 class="service-title">Microsoft Cybersecurity</h3>
         <p class="service-body">
-          Protection built for how SMBs actually operate. Practical, layered security that doesn't require an enterprise budget — but delivers enterprise-grade posture.
+          We don't sell "cybersecurity" in the abstract. We sell Defender XDR, Sentinel, Entra, and identity hardening — specific Microsoft-native outcomes that close real exposure gaps for SMBs without an enterprise security team.
         </p>
         <ul class="service-bullets gold-bullets">
-          <li>Security posture assessments & gap analysis</li>
-          <li>Endpoint protection & EDR deployment</li>
-          <li>MFA, Conditional Access & Zero Trust setup</li>
-          <li>Employee security awareness training</li>
+          <li><strong style="color:rgba(255,255,255,0.75)">Microsoft Defender Hardening Sprint</strong> — Defender for Endpoint, Defender for Office 365, attack surface reduction, email protection &amp; alert tuning</li>
+          <li><strong style="color:rgba(255,255,255,0.75)">Identity &amp; Conditional Access Baseline</strong> — MFA, Conditional Access, Entra ID policies, risky sign-in review &amp; privileged access cleanup</li>
+          <li><strong style="color:rgba(255,255,255,0.75)">Sentinel Readiness &amp; Onboarding</strong> — log sources, data connectors, workspace design, analytics rules, cost guardrails &amp; response playbooks</li>
+          <li><strong style="color:rgba(255,255,255,0.75)">Security Posture Review</strong> — Secure Score, endpoint exposure, identity risk, mail flow security, admin roles &amp; prioritized remediation roadmap</li>
         </ul>
         <div class="service-bg-num">03</div>
       </div>
@@ -1579,13 +1580,13 @@ footer {
         </div>
         <h3 class="service-title">AI Integration</h3>
         <p class="service-body">
-          Deploy AI where it actually changes how your business operates — not as a demo, not as a chatbot, but as a real productivity multiplier embedded in your workflows.
+          Secure productivity and workflow modernization using AI — grounded in your actual business processes, not demos. We design and automate workflows that run reliably, integrate with your existing Microsoft environment, and operate under a responsible governance framework.
         </p>
         <ul class="service-bullets gold-bullets">
-          <li>Microsoft Copilot deployment & configuration</li>
-          <li>Custom AI workflow design & automation</li>
-          <li>AI readiness assessment for SMBs</li>
-          <li>Responsible AI governance & policy</li>
+          <li>AI readiness assessment &amp; secure adoption planning</li>
+          <li>Custom AI workflow design &amp; process automation</li>
+          <li>Integration with Microsoft 365 &amp; Azure services</li>
+          <li>Responsible AI governance, data boundaries &amp; policy</li>
         </ul>
         <div class="service-bg-num">04</div>
       </div>
@@ -1690,7 +1691,7 @@ footer {
             </div>
             <div class="serve-metric">
               <div class="serve-metric-num">AI<span>+</span></div>
-              <div class="serve-metric-label">Copilot ready</div>
+              <div class="serve-metric-label">AI ready</div>
             </div>
           </div>
           <div class="serve-promise">
