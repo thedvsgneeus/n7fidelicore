@@ -1720,23 +1720,23 @@ footer {
       </p>
 
       <div class="contact-form-wrap reveal reveal-delay-2">
-        <form id="contactForm" onsubmit="handleSubmit(event)">
+        <form id="contactForm" action="https://formspree.io/f/mlgzgngv" method="POST" onsubmit="handleSubmit(event)">
           <div class="form-grid">
             <div class="form-group">
               <label class="form-label">First Name</label>
-              <input class="form-input" type="text" placeholder="John" required>
+              <input class="form-input" type="text" name="first_name" placeholder="John" required>
             </div>
             <div class="form-group">
               <label class="form-label">Last Name</label>
-              <input class="form-input" type="text" placeholder="Smith" required>
+              <input class="form-input" type="text" name="last_name" placeholder="Smith" required>
             </div>
             <div class="form-group">
               <label class="form-label">Company</label>
-              <input class="form-input" type="text" placeholder="Acme Corp" required>
+              <input class="form-input" type="text" name="company" placeholder="Acme Corp" required>
             </div>
             <div class="form-group">
               <label class="form-label">Company Size</label>
-              <select class="form-select" required>
+              <select class="form-select" name="company_size" required>
                 <option value="" disabled selected>Select range</option>
                 <option>1–10 employees</option>
                 <option>11–50 employees</option>
@@ -1747,11 +1747,11 @@ footer {
             </div>
             <div class="form-group full">
               <label class="form-label">Email</label>
-              <input class="form-input" type="email" placeholder="john@company.com" required>
+              <input class="form-input" type="email" name="email" placeholder="john@company.com" required>
             </div>
             <div class="form-group full">
               <label class="form-label">What are you looking to solve?</label>
-              <select class="form-select" required>
+              <select class="form-select" name="primary_need" required>
                 <option value="" disabled selected>Primary need</option>
                 <option>Azure Cloud Migration</option>
                 <option>SharePoint / Mail Migration</option>
@@ -1763,7 +1763,7 @@ footer {
             </div>
             <div class="form-group full">
               <label class="form-label">Tell us more (optional)</label>
-              <textarea class="form-textarea" placeholder="Brief description of your situation or goals..."></textarea>
+              <textarea class="form-textarea" name="message" placeholder="Brief description of your situation or goals..."></textarea>
             </div>
           </div>
           <button type="submit" class="btn-form">Send My Request →</button>
@@ -1858,13 +1858,34 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 revealEls.forEach(el => observer.observe(el));
 
-// Form submit
-function handleSubmit(e) {
+// Form submit — AJAX to Formspree so the success message shows inline
+async function handleSubmit(e) {
   e.preventDefault();
   const form = document.getElementById('contactForm');
+  const btn  = form.querySelector('.btn-form');
   const success = document.getElementById('formSuccess');
-  form.style.display = 'none';
-  success.classList.add('show');
+
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
+
+  try {
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (res.ok) {
+      form.style.display = 'none';
+      success.classList.add('show');
+    } else {
+      btn.textContent = 'Something went wrong — try again';
+      btn.disabled = false;
+    }
+  } catch {
+    btn.textContent = 'Network error — try again';
+    btn.disabled = false;
+  }
 }
 
 // Smooth scroll for anchor links
